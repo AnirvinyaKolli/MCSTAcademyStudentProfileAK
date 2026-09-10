@@ -22,7 +22,7 @@ public class Main {
             System.out.println(l);
         }
     }
-
+//
     private static String[] generateBorder(int l, int h){
         String[] grid = new String[h+2];
         String bar = "";
