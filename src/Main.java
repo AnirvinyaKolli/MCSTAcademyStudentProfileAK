@@ -1,5 +1,9 @@
+import java.sql.SQLOutput;
+
 public class Main {
     public static void main(String[] args) {
+        int w = 50;
+        String bar = generateBar(w);
         String name = "Sai Anirvinya Kolli";
         String prospectiveCareer = "Data Science";
         String[] hobbies = {"", "", ""};
@@ -17,19 +21,28 @@ public class Main {
         String aboutMe = "";
         String quote = "";
 
-        String[] grid = generateBorder(20, 20);
-        for (String l : grid){
-            System.out.println(l);
+        System.out.println(bar);
+
+        System.out.printf("|%-48s|%n", name);
+        System.out.printf("|%48s|%n", " ");
+        System.out.printf("|%15s %31s|%n", "Possible Career:", prospectiveCareer);
+        System.out.printf("|%48s|%n", " ");
+
+        for (int i = 0; i < techCategories.length-1; i++){
+            String sBar = "";
+            for (int j = 0; j < techCatVals[i]; j ++) sBar += "=";
+            System.out.printf("|%-40s [%-5s]|%n", techCategories[i], sBar);
         }
+
+        System.out.println(bar);
+
+
     }
-//
-    private static String[] generateBorder(int l, int h){
-        String[] grid = new String[h+2];
+
+    private static String generateBar(int w){
         String bar = "";
-        for (int i = 0; i < l; i ++) bar += "_";
-        grid[0] = bar;
-        grid[grid.length-1] = bar;
-        return grid;
+        for (int i = 0; i < w; i ++) bar += "_";
+        return bar;
     }
 }
 
